@@ -4,3 +4,12 @@ require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new
 
 task :default => :spec
+task :build do
+	gem build bib
+end
+task :install do
+	gem install bib
+end
+task :release do
+	gem push bib
+end
