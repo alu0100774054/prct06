@@ -4,17 +4,17 @@ require 'rspec/core/rake_task'
 
 desc "build .gem into the pkg directory"
 task :build do
-	sh "gem build bib.gemspec"
+	sh "gem build"
 end
 
 desc "build and install .gem into system gems"
 task :install do
-	sh "gem install bib.gem"
+	sh "gem install"
 end
 
 desc "build and push .gem to Rubygems"
 task :release do
-	sh "gem push bib.gem"
+	sh "gem push"
 end
 
 desc "Run RSpec code examples"
