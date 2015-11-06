@@ -1,15 +1,22 @@
 require "bundler/gem_tasks"
 require 'rspec/core/rake_task'
 
+desc "build .gem into the pkg directory"
+task :build  => [:prereq] do
+	gem build 
+end
+
+desc "build and install .gem into system gems"
+task :install do
+	gem install bib.gemspec
+end
+
+desc "build and push .gem to Rubygems"
+task :release do
+	gem push bib.gemspec
+end
+
+desc "Run RSpec code examples"
 RSpec::Core::RakeTask.new
 
 task :default => :spec
-task :build do
-	gem build bib
-end
-task :install do
-	gem install bib
-end
-task :release do
-	gem push bib
-end
