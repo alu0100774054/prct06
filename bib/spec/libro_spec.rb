@@ -5,7 +5,7 @@ module Prct06
 	class Libro
 		describe Prct06::Libro do
 			before :all do
-				@libro = Libro.new "autor","titulo","editorial", "edicion", "fecha"
+				@libro = Libro.new "autor","titulo","editorial", "edicion", "fecha", :isbn
 			end
 			describe "#new" do
 				it "Introduce parametros y retorna un objeto tipo Libro" do
@@ -35,6 +35,11 @@ module Prct06
 			describe "#fecha" do
 				it "Retorna la fecha del libro" do
 					@libro.fecha.should eql "fecha"
+				end
+			end
+			describe "#isbn" do
+				it "Retorna el isbn del libro" do
+					@libro.isbn.should eql :isbn
 				end
 			end
 		end
