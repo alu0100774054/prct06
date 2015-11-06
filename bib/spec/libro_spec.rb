@@ -5,31 +5,36 @@ module Prct06
 	class Libro
 		describe Prct06::Libro do
 			before :all do
-				@libro = Libro.new "autor","titulo","editorial",edicion
+				@libro = Libro.new "autor","titulo","editorial", "edicion", "fecha"
 			end
-			describe '#new' do
+			describe "#new" do
 				it "Introduce parametros y retorna un objeto tipo Libro" do
 					@Libro.should be_an_instance_of Libro
 				end
 			end
-			describe '#autor' do
+			describe "#autor" do
 				it "Retorna el autor del libro" do
 					@libro.autor.should eql "autor"
 				end
 			end
-			describe '#titulo' do
+			describe "#titulo" do
 				it "Retorna el titulo del libro" do
 					@libro.titulo.should eql "titulo"
 				end
 			end
-			describe '#editorial' do
+			describe "#editorial" do
 				it "Retorna la editorial del libro" do
 					@libro.editorial.should eql "editorial"
 				end
 			end
-			describe '#edicion' do
+			describe "#edicion" do
 				it "Retorna la edicion del libro" do
 					@libro.edicion.should eql "edicion"
+				end
+			end
+			describe "#fecha" do
+				it "Retorna la fecha del libro" do
+					@libro.fecha.should eql "fecha"
 				end
 			end
 		end
